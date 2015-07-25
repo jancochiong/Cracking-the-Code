@@ -6,30 +6,29 @@ What if you can not use additional data structures?
 public class UniqueChar{
 	public static void main(String[] args){
 
-		System.out.println(isUniqueChars("stringgoeshere"));
+		System.out.println(isUniqueChars("janc"));
 	}
 	public static boolean isUniqueChars(String str){
-		boolean uniqueCharCheckerTrue = true;
-		boolean uniqueCharCheckerFalse = true;
+		boolean uniqueCharChecker = true;
+
 		int count = 0;
-		int count2 = 0;
+
 		for(int i=0; i<str.length(); i++){
 			count++;
-			count2++;
 			while(count<str.length()){
 				//System.out.println(str.charAt(i));
 				//System.out.println(str.charAt(count));
 				if(str.charAt(i) != str.charAt(count)){
-					uniqueCharCheckerTrue = true;
+					uniqueCharChecker = true;
 				}
 				else{
-					uniqueCharCheckerFalse = false;
+					return false;
 				}
 				count++;
 			}
-			count = count2;
+			count = i+1;
 		}
-		return (uniqueCharCheckerTrue == uniqueCharCheckerFalse);
+		return uniqueCharChecker;
 	}
 	
 }
